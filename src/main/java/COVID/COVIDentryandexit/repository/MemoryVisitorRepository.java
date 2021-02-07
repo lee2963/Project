@@ -38,8 +38,8 @@ public class MemoryVisitorRepository implements VisitorRepository{
         LocalDateTime input_exit = LocalDateTime.parse(st.exit);//확진자 나간 시간
 
 
-        return store.values().stream().filter(visitor -> visitor.get().(input_entry.isBefore(getmap_entry) && input_exit.isAfter(getmap_entry)) ||
-                (getmap_entry.isBefore(input_entry) && getmap_exit.isAfter(input_entry))).findAny();
+       // return store.values().stream().filter(visitor -> visitor.get().(input_entry.isBefore(getmap_entry) && input_exit.isAfter(getmap_entry)) ||
+              //  (getmap_entry.isBefore(input_entry) && getmap_exit.isAfter(input_entry))).findAny();
         if((input_entry.isBefore(getmap_entry) && input_exit.isAfter(getmap_entry)) ||
                 (getmap_entry.isBefore(input_entry) && getmap_exit.isAfter(input_entry))){
             return  Optional.ofNullable(store.get(st));
